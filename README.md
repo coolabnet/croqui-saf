@@ -2,6 +2,12 @@
 
 Sistema web interativo para planejamento visual de áreas de cultivo agroflorestal, desenvolvido com Vue.js 3 (Composition API).
 
+## 🌐 Demo Online
+
+⚡ **Teste o sistema agora:** [https://coolabnet.github.io/croqui-saf/](https://coolabnet.github.io/croqui-saf/)
+
+Não é necessário instalar nada! O sistema roda completamente no navegador.
+
 ## ✨ Funcionalidades
 
 ### Canvas de Desenho
@@ -155,7 +161,7 @@ O sistema vem com **40 plantas** comuns em SAFs brasileiros, organizadas por est
 ### 🌱 Trepadeiras
 - Maracujá, Uva, Chuchu, Kiwi, Pimenta-do-Reino, Baunilha
 
-## 🎨 Tecnologias
+## 🌱 Tecnologias
 
 - **Vue.js 3** - Framework JavaScript reativo
 - **Composition API** - API moderna do Vue
@@ -163,6 +169,30 @@ O sistema vem com **40 plantas** comuns em SAFs brasileiros, organizadas por est
 - **SVG** - Canvas vetorial para visualização
 - **LocalStorage** - Persistência local de dados
 - **Canvas API** - Exportação de imagem
+- **GitHub Pages** - Hospedagem estática
+
+## 🚀 Deploy
+
+### GitHub Pages (Automático)
+O projeto está configurado com GitHub Actions para deploy automático:
+- Todo push na branch `main` gera um novo deploy
+- Build e publicação automáticos
+- Disponível em: https://coolabnet.github.io/croqui-saf/
+
+### Deploy Manual
+```bash
+# Executar script de deploy
+./deploy.sh
+```
+
+### Build Local
+```bash
+# Gerar build de produção
+npm run build
+
+# Preview do build
+npm run preview
+```
 
 ## 📝 Notas
 

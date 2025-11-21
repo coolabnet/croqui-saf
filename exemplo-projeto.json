@@ -1,0 +1,141 @@
+{
+  "name": "SAF Exemplo - Quintal Agroflorestal",
+  "terrainWidth": 30,
+  "terrainHeight": 40,
+  "placedPlants": [
+    {
+      "id": "1700000000000.1",
+      "plantId": "3",
+      "plantName": "Ipê Amarelo",
+      "scientificName": "Handroanthus albus",
+      "icon": "🌳",
+      "color": "#fbbf24",
+      "canopyRadius": 4,
+      "category": "emergente",
+      "x": 5,
+      "y": 5
+    },
+    {
+      "id": "1700000000000.2",
+      "plantId": "6",
+      "plantName": "Jatobá",
+      "scientificName": "Hymenaea courbaril",
+      "icon": "🌲",
+      "color": "#166534",
+      "canopyRadius": 6,
+      "category": "emergente",
+      "x": 22,
+      "y": 8
+    },
+    {
+      "id": "1700000000000.3",
+      "plantId": "5",
+      "plantName": "Cacau",
+      "scientificName": "Theobroma cacao",
+      "icon": "🍫",
+      "color": "#78350f",
+      "canopyRadius": 3,
+      "category": "médio",
+      "x": 10,
+      "y": 12
+    },
+    {
+      "id": "1700000000000.4",
+      "plantId": "1",
+      "plantName": "Bananeira",
+      "scientificName": "Musa spp.",
+      "icon": "🍌",
+      "color": "#fbbf24",
+      "canopyRadius": 2,
+      "category": "médio",
+      "x": 15,
+      "y": 15
+    },
+    {
+      "id": "1700000000000.5",
+      "plantId": "7",
+      "plantName": "Açaí",
+      "scientificName": "Euterpe oleracea",
+      "icon": "🫐",
+      "color": "#7c3aed",
+      "canopyRadius": 2,
+      "category": "médio",
+      "x": 8,
+      "y": 25
+    },
+    {
+      "id": "1700000000000.6",
+      "plantId": "4",
+      "plantName": "Café",
+      "scientificName": "Coffea arabica",
+      "icon": "☕",
+      "color": "#78350f",
+      "canopyRadius": 1.5,
+      "category": "baixo",
+      "x": 12,
+      "y": 20
+    },
+    {
+      "id": "1700000000000.7",
+      "plantId": "4",
+      "plantName": "Café",
+      "scientificName": "Coffea arabica",
+      "icon": "☕",
+      "color": "#78350f",
+      "canopyRadius": 1.5,
+      "category": "baixo",
+      "x": 16,
+      "y": 22
+    },
+    {
+      "id": "1700000000000.8",
+      "plantId": "10",
+      "plantName": "Mamão",
+      "scientificName": "Carica papaya",
+      "icon": "🍈",
+      "color": "#f97316",
+      "canopyRadius": 1.5,
+      "category": "baixo",
+      "x": 20,
+      "y": 25
+    },
+    {
+      "id": "1700000000000.9",
+      "plantId": "8",
+      "plantName": "Mandioca",
+      "scientificName": "Manihot esculenta",
+      "icon": "🥔",
+      "color": "#d97706",
+      "canopyRadius": 0.5,
+      "category": "rasteiro",
+      "x": 10,
+      "y": 30
+    },
+    {
+      "id": "1700000000000.10",
+      "plantId": "8",
+      "plantName": "Mandioca",
+      "scientificName": "Manihot esculenta",
+      "icon": "🥔",
+      "color": "#d97706",
+      "canopyRadius": 0.5,
+      "category": "rasteiro",
+      "x": 13,
+      "y": 32
+    },
+    {
+      "id": "1700000000000.11",
+      "plantId": "9",
+      "plantName": "Maracujá",
+      "scientificName": "Passiflora edulis",
+      "icon": "💜",
+      "color": "#a855f7",
+      "canopyRadius": 1,
+      "category": "trepadeira",
+      "x": 18,
+      "y": 35
+    }
+  ],
+  "createdAt": 1700000000000,
+  "updatedAt": 1700000000000
+}

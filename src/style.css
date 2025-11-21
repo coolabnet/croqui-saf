@@ -175,3 +175,55 @@ label {
   z-index: 100;
   white-space: nowrap;
 }
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    font-size: 13px;
+    gap: 4px;
+  }
+  
+  input, select {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+  
+  label {
+    font-size: 13px;
+  }
+  
+  .modal {
+    width: 95%;
+    padding: 20px 16px;
+  }
+  
+  .modal-header h2 {
+    font-size: 18px;
+  }
+  
+  .form-group {
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 12px;
+    padding: 7px 10px;
+  }
+  
+  input, select {
+    font-size: 12px;
+  }
+  
+  .modal {
+    width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+  }
+}

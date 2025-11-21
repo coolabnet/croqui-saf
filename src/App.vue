@@ -488,4 +488,27 @@ onUnmounted(() => {
   border-left: 4px solid #3b82f6;
   color: #1e40af;
 }
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+  
+  .info-panel {
+    width: 100%;
+    max-height: 40vh;
+    border-left: none;
+    border-top: 2px solid #e5e7eb;
+    order: 2;
+  }
+  
+  .notification {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    padding: 12px 16px;
+    font-size: 13px;
+  }
+}
 </style>

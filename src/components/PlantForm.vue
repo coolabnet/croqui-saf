@@ -218,4 +218,52 @@ function onSubmit() {
 .color-picker-group input[type="text"] {
   flex: 1;
 }
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .modal {
+    max-width: 95%;
+    padding: 20px 16px;
+    max-height: 85vh;
+  }
+  
+  .modal-header h2 {
+    font-size: 18px;
+  }
+  
+  .emoji-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  
+  .emoji-option {
+    font-size: 20px;
+    padding: 6px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    max-width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .emoji-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  
+  .emoji-option {
+    font-size: 18px;
+    padding: 4px;
+  }
+}
 </style>

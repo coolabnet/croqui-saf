@@ -299,4 +299,94 @@ function onDimensionsChange() {
     justify-content: center;
   }
 }
+
+@media (max-width: 768px) {
+  .toolbar {
+    padding: 8px 12px;
+    gap: 12px;
+  }
+  
+  .toolbar-section {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .toolbar-title {
+    font-size: 16px;
+  }
+  
+  .project-name-input {
+    width: 150px;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+  
+  .toolbar-controls {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .control-group {
+    padding: 0 6px;
+    border-right: none;
+    margin-bottom: 8px;
+  }
+  
+  .control-group button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  
+  .terrain-dimensions {
+    flex-wrap: wrap;
+  }
+  
+  .terrain-dimensions label {
+    width: 100%;
+    font-size: 12px;
+  }
+  
+  .dimension-input {
+    width: 50px;
+    font-size: 12px;
+  }
+  
+  .stats {
+    gap: 12px;
+    padding-top: 8px;
+  }
+  
+  .stat-label {
+    font-size: 10px;
+  }
+  
+  .stat-value {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toolbar-title {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .project-name {
+    width: 100%;
+  }
+  
+  .project-name-input {
+    width: 100%;
+  }
+  
+  .control-group {
+    width: auto;
+    flex-wrap: wrap;
+  }
+  
+  .control-group button {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}
 </style>

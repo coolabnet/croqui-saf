@@ -271,4 +271,75 @@ function onDragStart(plant, event) {
   font-size: 14px;
   margin: 0;
 }
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .plant-library {
+    width: 100%;
+    max-height: 50vh;
+    border-right: none;
+    border-bottom: 2px solid #e5e7eb;
+  }
+  
+  .library-header {
+    padding: 12px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  
+  .library-header h2 {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .library-header button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .search-box {
+    padding: 12px 16px;
+  }
+  
+  .plants-list {
+    padding: 12px 16px;
+  }
+  
+  .plant-card {
+    padding: 10px;
+  }
+  
+  .plant-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+  
+  .plant-name {
+    font-size: 13px;
+  }
+  
+  .plant-scientific {
+    font-size: 11px;
+  }
+  
+  .plant-meta {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plant-library {
+    max-height: 45vh;
+  }
+  
+  .library-header h2 {
+    font-size: 14px;
+  }
+  
+  .category-header h3 {
+    font-size: 13px;
+  }
+}
 </style>

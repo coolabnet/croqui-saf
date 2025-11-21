@@ -11,6 +11,9 @@
         @mousemove="onCanvasMouseMove"
         @mouseup="onCanvasMouseUp"
         @mouseleave="onCanvasMouseUp"
+        @touchstart.prevent="onTouchStart"
+        @touchmove.prevent="onTouchMove"
+        @touchend="onTouchEnd"
         @wheel.prevent="onWheel"
         @drop.prevent="onDrop"
         @dragover.prevent
@@ -62,6 +65,7 @@
           :key="plant.id"
           :transform="`translate(${plant.x * scale + offset.x}, ${plant.y * scale + offset.y})`"
           @mousedown.stop="onPlantMouseDown(plant, $event)"
+          @touchstart.stop="onPlantTouchStart(plant, $event)"
           @mouseenter="onPlantMouseEnter(plant, $event)"
           @mouseleave="onPlantMouseLeave"
           class="plant-item"
@@ -282,6 +286,75 @@ function onKeyDown(event) {
   }
 }
 
+// Touch events
+let touchStartTime = 0
+let lastTouchPlant = null
+
+function onTouchStart(event) {
+  touchStartTime = Date.now()
+  if (event.touches.length === 1 && !event.target.closest('.plant-item')) {
+    const touch = event.touches[0]
+    isPanning.value = true
+    dragStart.value = {
+      x: touch.clientX - offset.value.x,
+      y: touch.clientY - offset.value.y
+    }
+    selectedPlantId.value = null
+    emit('plant-selected', null)
+  }
+}
+
+function onTouchMove(event) {
+  if (event.touches.length === 1) {
+    const touch = event.touches[0]
+    if (isPanning.value) {
+      offset.value = {
+        x: touch.clientX - dragStart.value.x,
+        y: touch.clientY - dragStart.value.y
+      }
+    } else if (isDragging.value && draggedPlant.value) {
+      const svgRect = svgRef.value.getBoundingClientRect()
+      const x = ((touch.clientX - svgRect.left) - offset.value.x) / scale.value
+      const y = ((touch.clientY - svgRect.top) - offset.value.y) / scale.value
+      
+      const clampedX = Math.max(0, Math.min(props.terrainWidth, x))
+      const clampedY = Math.max(0, Math.min(props.terrainHeight, y))
+      
+      updatePlantPosition(draggedPlant.value.id, clampedX, clampedY)
+    }
+  }
+}
+
+function onTouchEnd() {
+  isPanning.value = false
+  isDragging.value = false
+  draggedPlant.value = null
+}
+
+function onPlantTouchStart(plant, event) {
+  event.stopPropagation()
+  const touchTime = Date.now()
+  
+  // Detectar toque duplo
+  if (lastTouchPlant === plant.id && (touchTime - touchStartTime) < 300) {
+    // Toque duplo - excluir planta
+    if (confirm(`Excluir ${plant.plantName}?`)) {
+      removePlantFromCanvas(plant.id)
+      emit('plant-deleted', plant.id)
+    }
+    lastTouchPlant = null
+  } else {
+    // Toque simples - selecionar e preparar para arrastar
+    selectedPlantId.value = plant.id
+    emit('plant-selected', plant)
+    isDragging.value = true
+    draggedPlant.value = plant
+    lastTouchPlant = plant.id
+  }
+  
+  touchStartTime = touchTime
+}
+
 // Expor métodos
 defineExpose({
   resetView() {
@@ -334,5 +407,34 @@ defineExpose({
   stroke: #2563eb !important;
   stroke-width: 3;
   opacity: 1;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+  .canvas-container {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+  }
+  
+  .canvas-wrapper {
+    min-height: 100%;
+    min-width: 100%;
+  }
+  
+  .canvas-svg {
+    min-height: 600px;
+    cursor: default;
+  }
+  
+  .plant-item {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-svg {
+    min-height: 500px;
+  }
 }
 </style>

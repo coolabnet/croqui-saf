@@ -493,6 +493,8 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .main-content {
     flex-direction: column;
+    overflow: visible;
+    height: auto;
   }
   
   .info-panel {
@@ -501,6 +503,7 @@ onUnmounted(() => {
     border-left: none;
     border-top: 2px solid #e5e7eb;
     order: 2;
+    flex-shrink: 0;
   }
   
   .notification {

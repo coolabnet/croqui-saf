@@ -412,19 +412,25 @@ defineExpose({
 /* Responsividade Mobile */
 @media (max-width: 768px) {
   .canvas-container {
-    overflow: auto;
+    overflow: auto !important;
     -webkit-overflow-scrolling: touch;
-    touch-action: pan-x pan-y;
+    touch-action: pan-x pan-y pinch-zoom;
+    height: 100%;
+    max-height: 50vh;
+    position: relative;
   }
   
   .canvas-wrapper {
-    min-height: 100%;
+    min-height: 800px;
     min-width: 100%;
+    position: relative;
   }
   
   .canvas-svg {
-    min-height: 600px;
+    min-height: 800px;
+    height: auto;
     cursor: default;
+    display: block;
   }
   
   .plant-item {
@@ -433,8 +439,16 @@ defineExpose({
 }
 
 @media (max-width: 480px) {
+  .canvas-container {
+    max-height: 45vh;
+  }
+  
+  .canvas-wrapper {
+    min-height: 700px;
+  }
+  
   .canvas-svg {
-    min-height: 500px;
+    min-height: 700px;
   }
 }
 </style>
